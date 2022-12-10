@@ -1,34 +1,8 @@
-import { formatDate } from '../../../../shared/helpers';
 import freetogame from '../../../../services/api/freetogame';
 
-import { Response, ResponseRaw, Params } from './types';
+import { ResponseRaw, Params } from './types';
 
-const parseResponse = (responseRaw: ResponseRaw[]): Response[] => {
-  let response = [] as Response[];
-
-  responseRaw.forEach(game => {
-    const parsedGame = {
-      id: game.id,
-      title: game.title,
-      thumbnail: game.thumbnail,
-      shortDescription: game.short_description,
-      gameUrl: game.game_url,
-      genre: game.genre,
-      platform: game.platform,
-      publisher: game.publisher,
-      developer: game.developer,
-      releaseDateRaw: game.release_date,
-      releaseDate: formatDate({ value: game.release_date }),
-      freetogameProfileUrl: game.freetogame_profile_url,
-    };
-
-    response = [...response, parsedGame];
-  });
-
-  return response;
-};
-
-export const requestRaw = async (params?: Params): Promise<ResponseRaw[]> => {
+export const request = async (params?: Params): Promise<ResponseRaw> => {
   // const response = await freetogame.get('/games', {
   //   // params: { page: params?.page },
   // });
@@ -5243,12 +5217,6 @@ export const requestRaw = async (params?: Params): Promise<ResponseRaw[]> => {
       freetogame_profile_url: 'https://www.freetogame.com/tibia',
     },
   ];
-};
-
-const request = async (params?: Params): Promise<Response[]> => {
-  const response = await requestRaw(params);
-
-  return parseResponse(response);
 };
 
 export default request;
