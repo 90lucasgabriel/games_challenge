@@ -1,4 +1,4 @@
-type GameList = {
+type GameItem = {
   id: number;
   title: string;
   thumbnail: string;
@@ -14,7 +14,7 @@ type GameList = {
   releaseDate: string;
 };
 
-type GameListRaw = {
+type GameItemRaw = {
   id: number;
   title: string;
   thumbnail: string;
@@ -28,4 +28,4 @@ type GameListRaw = {
   freetogame_profile_url: string;
 };
 
-export type { GameList, GameListRaw };
+export type { GameItem, GameItemRaw };

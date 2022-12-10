@@ -1,11 +1,7 @@
 import { formatDate } from '../../../../shared/helpers';
 import freetogame from '../../../../services/api/freetogame';
 
-import {
-  GameList as Response,
-  GameListRaw as ResponseRaw,
-  Params,
-} from './types';
+import { Response, ResponseRaw, Params } from './types';
 
 const parseResponse = (responseRaw: ResponseRaw[]): Response[] => {
   let response = [] as Response[];
@@ -32,7 +28,7 @@ const parseResponse = (responseRaw: ResponseRaw[]): Response[] => {
   return response;
 };
 
-export const getListRaw = async (params?: Params): Promise<ResponseRaw[]> => {
+export const requestRaw = async (params?: Params): Promise<ResponseRaw[]> => {
   // const response = await freetogame.get('/games', {
   //   // params: { page: params?.page },
   // });
@@ -5249,10 +5245,10 @@ export const getListRaw = async (params?: Params): Promise<ResponseRaw[]> => {
   ];
 };
 
-const getList = async (params?: Params): Promise<Response[]> => {
-  const response = await getListRaw(params);
+const request = async (params?: Params): Promise<Response[]> => {
+  const response = await requestRaw(params);
 
   return parseResponse(response);
 };
 
-export default getList;
+export default request;

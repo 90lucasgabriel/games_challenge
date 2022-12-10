@@ -1,19 +1,20 @@
 import React, { useEffect, useCallback } from 'react';
 
-import { getList } from '../../domains/Game/api';
+import { getGameList } from '../../domains/Game/api';
 
 const Home: React.FC = () => {
-  const getGameList = useCallback(async () => {
-    const response = await getList();
+  const getGames = useCallback(async () => {
+    const response = await getGameList();
+    console.log('🚀 ~ file: index.tsx:8 ~ getGames ~ response', response);
 
     return response;
   }, []);
 
   useEffect(() => {
-    getGameList();
-  }, []);
+    getGames();
+  }, []); // eslint-disable-line
 
-  return <div>Home2</div>;
+  return <div>Home</div>;
 };
 
 export default Home;

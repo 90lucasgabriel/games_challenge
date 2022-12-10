@@ -1,1 +1,2 @@
-export { default as getList } from './getList';
+export { default as getGame } from './getGame';
+export { default as getGameList } from './getList';
