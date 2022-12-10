@@ -11,6 +11,8 @@ module.exports = {
           components: './src/components',
           routes: './src/routes',
           screens: './src/screens',
+          services: './src/services',
+          shared: './src/shared',
         },
       },
     ],

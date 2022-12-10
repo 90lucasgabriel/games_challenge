@@ -12,6 +12,8 @@
       "screens": ["./src/screens/index"],
       "routes/*": ["./src/routes/*"],
       "routes": ["./src/routes/index"],
+      "services/*": ["./src/services/*"],
+      "services": ["./src/services/index"],
       "shared/*": ["./src/shared/*"],
       "shared": ["./src/shared/index"]
     }
