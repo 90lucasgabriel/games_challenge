@@ -1,45 +1,11 @@
 import { formatDate } from '../../../../shared/helpers';
 import freetogame from '../../../../services/api/freetogame';
 
-import { Response, ResponseRaw, Params } from './types';
-import {
-  parseMinimumSystemRequirements,
-  parseScreenshots,
-} from '../../helpers/parse';
+import { ResponseRaw, Params } from './types';
 
-const parseResponse = (responseRaw: ResponseRaw): Response => {
-  const parsedScreenshots = parseScreenshots(responseRaw.screenshots);
-  const parsedMinimumSystemRequirements = parseMinimumSystemRequirements(
-    responseRaw.minimum_system_requirements,
-  );
-
-  const response = {
-    id: responseRaw.id,
-    title: responseRaw.title,
-    thumbnail: responseRaw.thumbnail,
-    status: responseRaw.status,
-    shortDescription: responseRaw.short_description,
-    description: responseRaw.description,
-    gameUrl: responseRaw.game_url,
-    genre: responseRaw.genre,
-    platform: responseRaw.platform,
-    publisher: responseRaw.publisher,
-    developer: responseRaw.developer,
-    freetogameProfileUrl: responseRaw.freetogame_profile_url,
-
-    releaseDateRaw: responseRaw.release_date,
-    releaseDate: formatDate({ value: responseRaw.release_date }),
-
-    screenshots: parsedScreenshots,
-    minimumSystemRequirements: parsedMinimumSystemRequirements,
-  } as Response;
-
-  return response;
-};
-
-export const requestRaw = async (params?: Params): Promise<ResponseRaw> => {
+export const request = async (params?: Params): Promise<ResponseRaw> => {
   // const response = await freetogame.get('/games', {
-  //   // params: { page: paramßs?.page },
+  //   // params: { page: params?.page },
   // });
 
   // return response.data;
@@ -86,12 +52,6 @@ export const requestRaw = async (params?: Params): Promise<ResponseRaw> => {
       },
     ],
   };
-};
-
-const request = async (params?: Params): Promise<Response> => {
-  const response = await requestRaw(params);
-
-  return parseResponse(response);
 };
 
 export default request;
