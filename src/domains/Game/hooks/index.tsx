@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useContext } from 'react';
+import React, { createContext, useCallback, useContext, useState } from 'react';
 
 import { parseGame, parseGameList } from '../helpers/parse';
 
@@ -12,7 +12,9 @@ import {
 
 const GameContext = createContext<ContextData>({} as ContextData);
 
-const GameProvider = ({ children }: any) => {
+const GameProvider = ({ children }: any): JSX.Element => {
+  const [gameList, setGameList] = useState([] as GameListResponse);
+
   const getGame = useCallback(
     async (params: GameParams): Promise<GameResponse> => {
       const responseRaw = await getGameApi(params);
@@ -27,6 +29,8 @@ const GameProvider = ({ children }: any) => {
     const responseRaw = await getGameListApi();
     const response = parseGameList(responseRaw);
 
+    setGameList(response);
+
     return response;
   }, []);
 
@@ -35,6 +39,8 @@ const GameProvider = ({ children }: any) => {
       value={{
         getGame,
         getGameList,
+        gameList,
+        setGameList,
       }}
     >
       {children}

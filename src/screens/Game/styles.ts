@@ -5,7 +5,7 @@ import { BoxContainer } from '../../components';
 
 export const Container = styled.div`
   margin: 0 auto;
-  padding: ${Theme.Size.XLarge} ${Theme.Size.Zero} ${Theme.Size.Zero}
+  padding: ${Theme.Size.XSmall} ${Theme.Size.Zero} ${Theme.Size.Zero}
     ${Theme.Size.Zero};
 `;
 
