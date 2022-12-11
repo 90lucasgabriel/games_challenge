@@ -13,8 +13,6 @@ const Home: React.FC = () => {
 
   const getGames = useCallback(async () => {
     const response = await getGameList();
-    console.log('🚀 ~ file: index.tsx:8 ~ getGames ~ response', response); // eslint-disable-line
-
     setGameList(response);
   }, [getGameList]);
 

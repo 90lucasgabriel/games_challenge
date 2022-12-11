@@ -1,7 +1,9 @@
-import { Color, ScreenSize, Size } from '../enums';
+import { Color, PosterHeight, PosterWidth, ScreenSize, Size } from '../enums';
 
 const Theme = {
   Color,
+  PosterHeight,
+  PosterWidth,
   ScreenSize,
   Size,
 };
