@@ -4,7 +4,7 @@ import Theme from '../../shared/styles/Theme';
 
 export const Container = styled.div`
   margin: 0 auto;
-  max-width: ${Theme.ScreenSize.lg};
+  /* max-width: ${Theme.ScreenSize.lg}; */
 `;
 
 export const BackgroundImage = styled.img`
