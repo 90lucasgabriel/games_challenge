@@ -39,7 +39,7 @@ export const PosterContainer = styled.div`
 `;
 
 export const PosterImage = styled.img`
-  object-fit: fill;
+  object-fit: cover;
   width: 100%;
   height: 100%;
   background: ${Theme.Color.WhiteAplha};

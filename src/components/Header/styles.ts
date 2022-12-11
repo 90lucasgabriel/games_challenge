@@ -29,10 +29,14 @@ export const LogoContainer = styled.div`
 `;
 
 export const MenuContainer = styled.div`
-  display: flex;
+  display: none;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (min-width: ${Theme.ScreenSize.sm}) {
+    display: flex;
+  }
 `;
 
 export const MenuItem = styled(Link)`
