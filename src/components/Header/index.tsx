@@ -16,8 +16,8 @@ const Header = (): JSX.Element => {
   return (
     <Container>
       <RowBoxContainer>
-        <LeftContainer to="/">
-          <LogoContainer>
+        <LeftContainer>
+          <LogoContainer to="/">
             <FaGamepad />
           </LogoContainer>
           <SizedBox width={Theme.Size.Large} />

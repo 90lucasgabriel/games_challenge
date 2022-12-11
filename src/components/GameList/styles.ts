@@ -1,6 +1,15 @@
 import styled from 'styled-components';
 import Theme from '../../shared/styles/Theme';
 
+export const NoResultContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Label = styled.h2``;
+
 export const Container = styled.div`
   width: 100%;
   display: grid;

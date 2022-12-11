@@ -11,7 +11,7 @@ export default createGlobalStyle`
   }
   html {
     min-height: 100%;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(92,44,72,1) 95%);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(55, 28, 109, 1) 95%);
     font-size: 62.5%;
   }
 

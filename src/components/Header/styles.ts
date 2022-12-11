@@ -10,14 +10,14 @@ export const Container = styled.div`
   right: 0;
 `;
 
-export const LeftContainer = styled(Link)`
+export const LeftContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
 `;
 
-export const LogoContainer = styled.div`
+export const LogoContainer = styled(Link)`
   display: flex;
   justify-content: center;
   cursor: pointer;
@@ -25,6 +25,7 @@ export const LogoContainer = styled.div`
   svg {
     height: ${Theme.Size.Large};
     width: ${Theme.Size.Large};
+    color: ${Theme.Color.Primary};
   }
 `;
 
@@ -53,5 +54,6 @@ export const MenuIcon = styled.div`
   svg {
     height: ${Theme.Size.Medium};
     width: ${Theme.Size.Medium};
+    color: ${Theme.Color.Primary};
   }
 `;
