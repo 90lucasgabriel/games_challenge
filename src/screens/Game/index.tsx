@@ -6,7 +6,7 @@ import { Response as GameResponse } from '../../domains/Game/api/getGame/types';
 import { useGame } from '../../domains/Game/hooks';
 
 import Theme from '../../shared/styles/Theme';
-import { Carousel, Pill, SizedBox } from '../../components';
+import { Carousel, Pill, SizedBox, Tile } from '../../components';
 import {
   Container,
   BackgroundImage,
@@ -27,9 +27,6 @@ import {
   InfoLabel,
   RequirementsContainer,
   RequirementsTitle,
-  InlineItemContainer,
-  InlineItemTitle,
-  InlineItemLabel,
   ItemContainer,
   ItemTitle,
   ItemLabel,
@@ -97,55 +94,34 @@ const Home: React.FC = () => {
 
         <InfoBoxContainer>
           <InfoContainer>
-            <InlineItemContainer>
-              <InlineItemTitle>Developer</InlineItemTitle>
-              <InlineItemLabel>{game?.developer}</InlineItemLabel>
-            </InlineItemContainer>
-
-            <InlineItemContainer>
-              <InlineItemTitle>Publisher</InlineItemTitle>
-              <InlineItemLabel>{game?.publisher}</InlineItemLabel>
-            </InlineItemContainer>
-
-            <InlineItemContainer>
-              <InlineItemTitle>Release Date</InlineItemTitle>
-              <InlineItemLabel>{game?.releaseDate}</InlineItemLabel>
-            </InlineItemContainer>
-
-            <InlineItemContainer>
-              <InlineItemTitle>Platform</InlineItemTitle>
-              <InlineItemLabel>{game?.platform}</InlineItemLabel>
-            </InlineItemContainer>
+            <Tile title="Developer" description={game?.developer} inline />
+            <Tile title="Publisher" description={game?.publisher} inline />
+            <Tile title="Release Date" description={game?.releaseDate} inline />
+            <Tile title="Genre" description={game?.genre} inline />
+            <Tile title="Platform" description={game?.platform} inline />
           </InfoContainer>
           <RequirementsContainer>
             <RequirementsTitle>Minimum System Requirements</RequirementsTitle>
-
-            <ItemContainer>
-              <ItemTitle>Graphics</ItemTitle>
-              <ItemLabel>{game?.minimumSystemRequirements?.graphics}</ItemLabel>
-            </ItemContainer>
-
-            <ItemContainer>
-              <ItemTitle>Memory</ItemTitle>
-              <ItemLabel>{game?.minimumSystemRequirements?.memory}</ItemLabel>
-            </ItemContainer>
-
-            <ItemContainer>
-              <ItemTitle>OS</ItemTitle>
-              <ItemLabel>{game?.minimumSystemRequirements?.os}</ItemLabel>
-            </ItemContainer>
-
-            <ItemContainer>
-              <ItemTitle>Processor</ItemTitle>
-              <ItemLabel>
-                {game?.minimumSystemRequirements?.processor}
-              </ItemLabel>
-            </ItemContainer>
-
-            <ItemContainer>
-              <ItemTitle>Storage</ItemTitle>
-              <ItemLabel>{game?.minimumSystemRequirements?.storage}</ItemLabel>
-            </ItemContainer>
+            <Tile
+              title="Graphics"
+              description={game?.minimumSystemRequirements?.graphics}
+            />
+            <Tile
+              title="Memory"
+              description={game?.minimumSystemRequirements?.memory}
+            />
+            <Tile
+              title="OS"
+              description={game?.minimumSystemRequirements?.os}
+            />
+            <Tile
+              title="Processor"
+              description={game?.minimumSystemRequirements?.processor}
+            />
+            <Tile
+              title="Storage"
+              description={game?.minimumSystemRequirements?.storage}
+            />
           </RequirementsContainer>
         </InfoBoxContainer>
       </DetailsContainer>
