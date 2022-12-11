@@ -24,6 +24,7 @@ const Header = (): JSX.Element => {
           <SearchInput />
         </LeftContainer>
 
+
         <MenuContainer>
           <MenuItem to="/">Home</MenuItem>
           <MenuItem to="/">Profile</MenuItem>
