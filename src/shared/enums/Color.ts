@@ -1,6 +1,6 @@
 enum Color {
   Primary = '#edb900',
-  Secondary = '#80bcb8',
+  Secondary = '#ea68ff',
   Fill = '#2D4055',
   FillSecondary = '#5C2C48',
   Text = '#efefef',

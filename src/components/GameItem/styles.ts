@@ -14,12 +14,12 @@ export const Container = styled.div`
   &:hover {
     margin-top: -10px;
     background: ${Theme.Color.WhiteAplhaSelected};
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 10px 25px 0px rgb(234, 104, 255, 0.3);
     cursor: pointer;
 
     img {
-      width: 110%;
-      height: 110%;
+      width: 105%;
+      height: 105%;
       margin-top: -10px;
     }
   }
