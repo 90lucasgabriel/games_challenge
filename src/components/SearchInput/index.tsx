@@ -1,7 +1,8 @@
 import React from 'react';
+import { FaSearch, FaTimes } from 'react-icons/fa';
 
 import { useSearchInput } from './hooks';
-import { Container, Input } from './styles';
+import { Container, Input, ClearButton, IconButton } from './styles';
 
 const SearchInput = (): JSX.Element => {
   const { keyword, setKeyword } = useSearchInput();
@@ -17,6 +18,14 @@ const SearchInput = (): JSX.Element => {
         onChange={value => onChangeKeyword(value)}
         value={keyword}
       />
+
+      <ClearButton onClick={() => setKeyword('')} show={keyword?.length > 0}>
+        <FaTimes />
+      </ClearButton>
+
+      <IconButton to="/">
+        <FaSearch />
+      </IconButton>
     </Container>
   );
 };

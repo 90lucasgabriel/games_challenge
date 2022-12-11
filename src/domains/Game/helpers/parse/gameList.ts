@@ -1,7 +1,7 @@
 import { formatDate } from '../../../../shared/helpers';
 import { GameItem, GameItemRaw } from '../../types';
 
-const parseGameList = (valueRaw: GameItemRaw[]) => {
+const parseGameList = (valueRaw: GameItemRaw[]): GameItem[] => {
   let response = [] as GameItem[];
 
   valueRaw.forEach(game => {
