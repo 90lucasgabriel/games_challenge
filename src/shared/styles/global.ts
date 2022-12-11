@@ -11,7 +11,7 @@ export default createGlobalStyle`
   }
   html {
     min-height: 100%;
-    background: ${Color.Fill};
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(92,44,72,1) 95%);
     font-size: 62.5%;
   }
 
@@ -21,11 +21,11 @@ export default createGlobalStyle`
     }
   }
 
-  body {
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(92,44,72,1) 95%);
+  body, a {
     color: ${Color.Text};
     font-size: ${Size.Default};
     -webkit-font-smoothing: antialiased;
+    text-decoration: none;
   }
   body, input, button {
     font-weight: 100;

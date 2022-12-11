@@ -1,5 +1,9 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
 import Theme from '../../shared/styles/Theme';
+
+export const Touchable = styled(Link)``;
 
 export const Container = styled.div`
   display: flex;

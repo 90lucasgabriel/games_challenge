@@ -1,10 +1,12 @@
 import React from 'react';
 
 import Theme from '../../shared/styles/Theme';
+import Route from '../../routes/enums';
 import GameItemProps from './types';
 
 import { Pill, SizedBox } from '..';
 import {
+  Touchable,
   Container,
   PosterContainer,
   PosterImage,
@@ -23,30 +25,32 @@ const GameItem = ({ data }: GameItemProps): JSX.Element | null => {
   }
 
   return (
-    <Container>
-      <PosterContainer>
-        <PosterImage src={data.thumbnail} />
-      </PosterContainer>
+    <Touchable to={`${Route.GAME}/${data.id}`}>
+      <Container>
+        <PosterContainer>
+          <PosterImage src={data.thumbnail} />
+        </PosterContainer>
 
-      <InfoContainer>
-        <NameContainer>
-          <NameLabel>{data.title}</NameLabel>
-        </NameContainer>
+        <InfoContainer>
+          <NameContainer>
+            <NameLabel>{data.title}</NameLabel>
+          </NameContainer>
 
-        <SizedBox height={Theme.Size.XSmall} />
+          <SizedBox height={Theme.Size.XSmall} />
 
-        <SubtitleContainer>
-          <PublisherLabel>{data.publisher}</PublisherLabel>
-          <GenreContainer>
-            <Pill>{data.genre}</Pill>
-          </GenreContainer>
-        </SubtitleContainer>
+          <SubtitleContainer>
+            <PublisherLabel>{data.publisher}</PublisherLabel>
+            <GenreContainer>
+              <Pill>{data.genre}</Pill>
+            </GenreContainer>
+          </SubtitleContainer>
 
-        <SizedBox height={Theme.Size.Small} />
+          <SizedBox height={Theme.Size.Small} />
 
-        <DescriptionLabel>{data.shortDescription}</DescriptionLabel>
-      </InfoContainer>
-    </Container>
+          <DescriptionLabel>{data.shortDescription}</DescriptionLabel>
+        </InfoContainer>
+      </Container>
+    </Touchable>
   );
 };
 

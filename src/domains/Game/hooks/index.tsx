@@ -1,25 +1,27 @@
 import React, { createContext, useCallback, useContext } from 'react';
 
-import {
-  parseGame,
-  parseGameList,
-} from '../helpers/parse';
+import { parseGame, parseGameList } from '../helpers/parse';
 
-import { getGame as getGameApi, getGameList as getGameListApi } from '../api';
-import { Response as GameResponse } from '../api/getGame/types';
-import { Response as GameListResponse } from '../api/getList/types';
 import ContextData from '../types/ContextData';
-
+import { getGame as getGameApi, getGameList as getGameListApi } from '../api';
+import { Response as GameListResponse } from '../api/getList/types';
+import {
+  Params as GameParams,
+  Response as GameResponse,
+} from '../api/getGame/types';
 
 const GameContext = createContext<ContextData>({} as ContextData);
 
 const GameProvider = ({ children }: any) => {
-  const getGame = useCallback(async (): Promise<GameResponse> => {
-    const responseRaw = await getGameApi();
-    const response = parseGame(responseRaw);
+  const getGame = useCallback(
+    async (params: GameParams): Promise<GameResponse> => {
+      const responseRaw = await getGameApi(params);
+      const response = parseGame(responseRaw);
 
-    return response;
-  }, []);
+      return response;
+    },
+    [],
+  );
 
   const getGameList = useCallback(async (): Promise<GameListResponse> => {
     const responseRaw = await getGameListApi();
