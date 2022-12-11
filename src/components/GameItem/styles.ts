@@ -7,6 +7,7 @@ export const Container = styled.div`
   overflow: hidden;
   border-radius: ${Theme.Size.Medium};
   background: ${Theme.Color.WhiteAplha};
+  border: 1px ${Theme.Color.WhiteAplha} solid;
 
   transition: all 0.5s ease;
 
@@ -26,7 +27,7 @@ export const Container = styled.div`
 
 export const PosterContainer = styled.div`
   display: flex;
-  flex: 1;
+  height: 165px;
   border-radius: ${Theme.Size.Medium};
   object-fit: cover;
   align-items: center;
@@ -37,6 +38,7 @@ export const PosterImage = styled.img`
   object-fit: fill;
   width: 100%;
   height: 100%;
+  background: ${Theme.Color.WhiteAplha};
 
   transition: all 0.5s ease;
 `;
@@ -48,7 +50,15 @@ export const InfoContainer = styled.div`
 
 export const NameContainer = styled.div``;
 
-export const NameLabel = styled.h2``;
+export const NameLabel = styled.h2`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 3.6rem;
+  max-height: 13rem;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+`;
 
 export const SubtitleContainer = styled.div`
   display: flex;
