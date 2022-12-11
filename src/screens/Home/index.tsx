@@ -1,22 +1,34 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback, useState } from 'react';
 
+import { Response as GameListResponse } from '../../domains/Game/api/getList/types';
 import { useGame } from '../../domains/Game/hooks';
+
+import { GameList } from '../../components';
+import { Container, GameListContainer } from './styles';
 
 const Home: React.FC = () => {
   const { getGameList } = useGame();
+
+  const [gameList, setGameList] = useState([] as GameListResponse);
 
   const getGames = useCallback(async () => {
     const response = await getGameList();
     console.log('🚀 ~ file: index.tsx:8 ~ getGames ~ response', response); // eslint-disable-line
 
-    return response;
+    setGameList(response);
   }, [getGameList]);
 
   useEffect(() => {
     getGames();
   }, []); // eslint-disable-line
 
-  return <div>Home</div>;
+  return (
+    <Container>
+      <GameListContainer>
+        <GameList data={gameList} />
+      </GameListContainer>
+    </Container>
+  );
 };
 
 export default Home;

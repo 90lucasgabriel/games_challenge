@@ -22,7 +22,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background: ${Color.Fill};
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(92,44,72,1) 95%);
     color: ${Color.Text};
     font-size: ${Size.Default};
     -webkit-font-smoothing: antialiased;
@@ -31,11 +31,11 @@ export default createGlobalStyle`
     font-weight: 100;
   }
   h1, strong {
-    font-weight: 400,
+    font-weight: 600,
   }
 
   h2, h3, h4, h5, h6 {
-    font-weight: 100;
+    font-weight: 200;
   }
 
   button {
