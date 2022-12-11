@@ -1,14 +1,16 @@
 import styled from 'styled-components';
 
 import Theme from '../../shared/styles/Theme';
+import { BoxContainer } from '../../components';
 
 export const Container = styled.div`
   margin: 0 auto;
-  /* max-width: ${Theme.ScreenSize.lg}; */
+  padding: ${Theme.Size.XLarge} ${Theme.Size.Zero} ${Theme.Size.Zero}
+    ${Theme.Size.Zero};
 `;
 
 export const BackgroundImage = styled.img`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -18,12 +20,26 @@ export const BackgroundImage = styled.img`
   z-index: -1;
 `;
 
+export const SummaryBoxContainer = styled(BoxContainer)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  position: relative;
+
+  @media only screen and (min-width: ${Theme.ScreenSize.sm}) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+`;
+
 export const FeaturedImageContainer = styled.div`
   width: ${Theme.PosterWidth.Large};
   height: ${Theme.PosterHeight.Large};
   overflow: hidden;
   border-radius: ${Theme.Size.Default};
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 10px 0px ${Theme.Color.BlackAplhaSelected};
+  margin: ${Theme.Size.Default};
 `;
 
 export const FeaturedImage = styled.img`
@@ -33,6 +49,122 @@ export const FeaturedImage = styled.img`
 `;
 
 export const GameListContainer = styled.div`
-  margin: 0 auto;
-  max-width: ${Theme.ScreenSize.lg};
+  padding: ${Theme.Size.Default};
+  border: 1px solid white;
+`;
+
+export const SummaryContainer = styled.div`
+  padding: ${Theme.Size.Default};
+  min-height: 24rem;
+`;
+
+export const NameContainer = styled.div``;
+
+export const NameLabel = styled.h1``;
+
+export const PublisherLabel = styled.p`
+  font-size: ${Theme.Size.Default};
+`;
+
+export const GenreContainer = styled.div`
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+`;
+
+export const ShortDescriptionLabel = styled.p``;
+
+export const DetailsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: -${Theme.Size.XLarge};
+  z-index: 1;
+  background: ${Theme.Color.BlackAplhaSelected};
+`;
+
+export const DescriptionBoxContainer = styled(BoxContainer)`
+  display: flex;
+  flex: 1;
+  padding: ${Theme.Size.XLarge} ${Theme.Size.Default} ${Theme.Size.Large}
+    ${Theme.Size.Default};
+`;
+
+export const DescriptionLabel = styled.p``;
+
+export const CarouselContainer = styled.div`
+  display: flex;
+`;
+
+export const InfoBoxContainer = styled(BoxContainer)`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  padding: ${Theme.Size.Large} ${Theme.Size.Default};
+
+  @media only screen and (min-width: ${Theme.ScreenSize.sm}) {
+    flex-direction: row;
+  }
+`;
+
+export const InfoContainer = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: ${Theme.Size.Default};
+`;
+
+export const InfoLabel = styled.p`
+  display: flex;
+  flex: 1;
+`;
+
+export const RequirementsContainer = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: ${Theme.Size.Default};
+  margin: ${Theme.Size.Default};
+  border-radius: ${Theme.Size.Default};
+  border: 1px solid ${Theme.Color.WhiteAplha};
+  background: ${Theme.Color.WhiteAplha};
+  box-shadow: 0px 5px 10px 0px ${Theme.Color.BlackAplhaSelected};
+`;
+
+export const RequirementsTitle = styled.h4`
+  display: flex;
+  flex: 1;
+`;
+
+export const InlineItemContainer = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const InlineItemTitle = styled.h5`
+  display: flex;
+`;
+
+export const InlineItemLabel = styled.p`
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+  justify-content: flex-end;
+`;
+
+export const ItemContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: ${Theme.Size.Medium};
+`;
+
+export const ItemTitle = styled.h5`
+  display: flex;
+`;
+
+export const ItemLabel = styled.p`
+  display: flex;
 `;

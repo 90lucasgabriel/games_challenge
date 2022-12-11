@@ -28,14 +28,19 @@ export default createGlobalStyle`
     text-decoration: none;
   }
   body, input, button {
-    font-weight: 100;
+    font-weight: 200;
   }
   h1, strong {
-    font-weight: 600,
+    font-weight: 400,
   }
 
   h2, h3, h4, h5, h6 {
-    font-weight: 200;
+    font-weight: 300;
+  }
+
+  p {
+    font-size: 1.6rem;
+    line-height: 32px;
   }
 
   button {

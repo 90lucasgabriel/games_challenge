@@ -10,6 +10,8 @@ enum Color {
   Transparent = 'rgba(255,255,255,0.001)',
   WhiteAplha = 'rgba(255,255,255,0.1)',
   WhiteAplhaSelected = 'rgba(255,255,255,0.2)',
+  BlackAplha = 'rgba(0,0,0,0.1)',
+  BlackAplhaSelected = 'rgba(0,0,0,0.3)',
 }
 
 export default Color;

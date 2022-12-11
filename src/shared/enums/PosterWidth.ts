@@ -1,7 +1,7 @@
 enum PosterWidth {
-  Small = '10rem',
-  Default = '16.5rem',
-  Large = '35.9rem',
+  Small = '15.2rem',
+  Default = '25.3rem',
+  Large = '55rem',
 }
 
 export default PosterWidth;
