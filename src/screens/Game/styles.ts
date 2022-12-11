@@ -23,39 +23,56 @@ export const BackgroundImage = styled.img`
 export const SummaryBoxContainer = styled(BoxContainer)`
   display: flex;
   flex-direction: column;
-  align-items: center;
   z-index: 10;
   position: relative;
 
   @media only screen and (min-width: ${Theme.ScreenSize.sm}) {
     flex-direction: row;
-    align-items: flex-start;
+    justify-content: space-between;
+  }
+`;
+
+export const SummaryContainer = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: ${Theme.Size.Default};
+  min-height: 24rem;
+`;
+
+export const PillContainer = styled.div``;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  @media only screen and (min-width: ${Theme.ScreenSize.sm}) {
+    width: 100%;
   }
 `;
 
 export const FeaturedImageContainer = styled.div`
-  width: ${Theme.PosterWidth.Large};
-  height: ${Theme.PosterHeight.Large};
-  overflow: hidden;
-  border-radius: ${Theme.Size.Default};
-  box-shadow: 0px 5px 10px 0px ${Theme.Color.BlackAplhaSelected};
   margin: ${Theme.Size.Default};
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  @media only screen and (min-width: ${Theme.ScreenSize.sm}) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 export const FeaturedImage = styled.img`
-  width: 100%;
-  height: 100%;
+  width: ${Theme.PosterWidth.Large};
+  height: ${Theme.PosterHeight.Large};
+  border-radius: ${Theme.Size.Default};
+  box-shadow: 0px 5px 10px 0px ${Theme.Color.BlackAplhaSelected};
   object-fit: cover;
 `;
 
 export const GameListContainer = styled.div`
   padding: ${Theme.Size.Default};
   border: 1px solid white;
-`;
-
-export const SummaryContainer = styled.div`
-  padding: ${Theme.Size.Default};
-  min-height: 24rem;
 `;
 
 export const NameContainer = styled.div``;

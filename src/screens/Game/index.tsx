@@ -6,7 +6,7 @@ import { Response as GameResponse } from '../../domains/Game/api/getGame/types';
 import { useGame } from '../../domains/Game/hooks';
 
 import Theme from '../../shared/styles/Theme';
-import { Carousel, Pill, SizedBox, Tile } from '../../components';
+import { ButtonLink, Carousel, Pill, SizedBox, Tile } from '../../components';
 import {
   Container,
   BackgroundImage,
@@ -17,7 +17,7 @@ import {
   NameContainer,
   NameLabel,
   PublisherLabel,
-  ShortDescriptionLabel,
+  ButtonContainer,
   DetailsContainer,
   DescriptionBoxContainer,
   DescriptionLabel,
@@ -25,6 +25,7 @@ import {
   InfoBoxContainer,
   InfoContainer,
   InfoLabel,
+  PillContainer,
   RequirementsContainer,
   RequirementsTitle,
   ItemContainer,
@@ -70,12 +71,20 @@ const Home: React.FC = () => {
           <SizedBox height={Theme.Size.XSmall} />
           <PublisherLabel>{game.publisher}</PublisherLabel>
           <SizedBox height={Theme.Size.XSmall} />
-          <Pill>{game.genre}</Pill>
-          <SizedBox height={Theme.Size.Small} />
 
-          <ShortDescriptionLabel>
-            {game?.shortDescription}
-          </ShortDescriptionLabel>
+          <PillContainer>
+            <Pill>{game.genre}</Pill>
+          </PillContainer>
+          <SizedBox height={Theme.Size.Large} />
+
+          <ButtonContainer>
+            <ButtonLink
+              title="PLAY GAME"
+              to={game?.freetogameProfileUrl}
+              target="_blank"
+              native
+            />
+          </ButtonContainer>
         </SummaryContainer>
 
         <FeaturedImageContainer>
