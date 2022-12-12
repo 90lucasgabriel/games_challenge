@@ -1,46 +1,94 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Web](./.github/mockup.png)
+</div>
 
-## Available Scripts
+## Summary
+  - [1. Introduction](#1-introduction)
+  - [2. Live Preview](#2-live-preview)
+  - [3. Technologies](#3-technologies)
+  - [4. Installing and Running](#4-installing-and-running)
+  - [5. References](#5-references)
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 1. Introduction
+See lists and details of your favorite games. It was developed for 3 days challenge.
+### 1.2. Features
+- Game list;
+- Game details;
+- Search by name, description, type, platform and publisher;
+- Sort by name;
+- Components skeleton while loading;
+- Carousel with screenshots;
+- Search when click in attributes;
+- Responsivity;
+- Redirect to game page;
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<div align="center">
 
-### `npm test`
+https://youtu.be/tHMbcTnPXSo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[![](http://img.youtube.com/vi/tHMbcTnPXSo/0.jpg)](https://www.youtube.com/watch?v=tHMbcTnPXSo "Video demo.")
 
-### `npm run build`
+_Video demo._
+</div>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 2. Live Preview
+- Production: [https://games.lucasgabriel.com.br/](https://games.lucasgabriel.com.br/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 3. Technologies
+- [ReactJS](https://reactjs.org/) _[1]_
+- [Styled Components](https://styled-components.com/) _[2]_
+- [Typescript](https://www.typescriptlang.org/) _[3]_
+- [Netlify](https://www.netlify.com/) _[4]_
+- [Free To Game API](https://www.freetogame.com/api-doc/) _[5]_
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## 4. Installing and Running
+- Clone this repo:
+```
+git clone git@github.com:90lucasgabriel/games_challenge.git
+```
+- Access directory:
+```
+cd games_challenge
+```
+- Install dependencies:
+```
+yarn
+```
+- Create and setup environment files:
+```
+/.env
+REACT_APP_X_RAPIDAPI_KEY=6db00c4724msh2b533c10bc09cc9p1729b2jsn36f171f12e72
+```
+- Run
+```
+yarn start
+```
+- Access (Browser)
+```
+localhost:3000
+```
+
+
+## 5. References
+[1] React - Avaiable on https://reactjs.org/;
+
+[2] Styled Components - Available on https://styled-components.com/;
+
+[3] Typescript - Available on https://www.typescriptlang.org/;
+
+[4] Netlify - Available on https://www.netlify.com/;
+
+[5] Free To Game API - Available on https://www.freetogame.com/api-doc/;
