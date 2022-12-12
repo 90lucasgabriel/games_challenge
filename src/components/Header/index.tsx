@@ -2,7 +2,7 @@ import React from 'react';
 import { FaGamepad, FaUserCircle } from 'react-icons/fa';
 
 import Theme from '../../shared/styles/Theme';
-import { RowBoxContainer, SearchInput, SizedBox } from '..';
+import { RowBoxContainer, SearchInput, SizedBox, SortBy } from '..';
 import {
   Container,
   LeftContainer,
@@ -22,6 +22,7 @@ const Header = (): JSX.Element => {
           </LogoContainer>
           <SizedBox width={Theme.Size.Large} />
           <SearchInput />
+          <SortBy />
         </LeftContainer>
 
         <MenuContainer>

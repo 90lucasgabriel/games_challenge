@@ -3,3 +3,4 @@ export { default as PosterHeight } from './PosterHeight';
 export { default as PosterWidth } from './PosterWidth';
 export { default as ScreenSize } from './ScreenSize';
 export { default as Size } from './Size';
+export { default as SortBy } from './SortBy';

@@ -10,6 +10,8 @@ import {
   Response as GameResponse,
 } from '../api/getGame/types';
 
+import { useSearchInput } from '../../../components/SearchInput/hooks';
+
 const GameContext = createContext<ContextData>({} as ContextData);
 
 const GameProvider = ({ children }: any): JSX.Element => {
