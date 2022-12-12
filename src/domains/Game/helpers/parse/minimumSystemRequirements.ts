@@ -7,11 +7,11 @@ const parseMinimumSystemRequirements = (
   valueRaw: MinimumSystemRequirementsRaw,
 ): MinimumSystemRequirements => {
   const response = {
-    graphics: valueRaw.graphics,
-    memory: valueRaw.memory,
-    os: valueRaw.os,
-    processor: valueRaw.processor,
-    storage: valueRaw.storage,
+    graphics: valueRaw?.graphics ?? '-',
+    memory: valueRaw?.memory ?? '-',
+    os: valueRaw?.os ?? '-',
+    processor: valueRaw?.processor ?? '-',
+    storage: valueRaw?.storage ?? '-',
   } as MinimumSystemRequirements;
 
   return response;
