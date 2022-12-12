@@ -7,34 +7,16 @@ import { Response as GameResponse } from '../../domains/Game/api/getGame/types';
 import { useGame } from '../../domains/Game/hooks';
 import { useSearchInput } from '../../components/SearchInput/hooks';
 
-import Theme from '../../shared/styles/Theme';
-import { InfoTable, RequirementsTable } from './components';
-import {
-  ButtonLink,
-  Carousel,
-  Header,
-  Pill,
-  SizedBox,
-  Tile,
-} from '../../components';
+import { GameSummary, InfoTable, RequirementsTable } from './components';
+import { Carousel, Header } from '../../components';
 import {
   Container,
   BackgroundImage,
-  SummaryBoxContainer,
-  FeaturedImageContainer,
-  FeaturedImage,
-  SummaryContainer,
-  NameContainer,
-  NameLabel,
-  PublisherLabel,
-  ButtonContainer,
   DetailsContainer,
   DescriptionBoxContainer,
   DescriptionLabel,
   CarouselContainer,
   InfoBoxContainer,
-  SubtitleContainer,
-  ShortDescriptionLabel,
 } from './styles';
 
 const Home: React.FC = () => {
@@ -79,40 +61,7 @@ const Home: React.FC = () => {
           src={game?.screenshots ? game.screenshots[0].image : game.thumbnail}
         />
 
-        <SummaryBoxContainer>
-          <SummaryContainer>
-            <NameContainer>
-              <NameLabel>{game?.title}</NameLabel>
-            </NameContainer>
-
-            <SizedBox height={Theme.Size.XSmall} />
-            <SubtitleContainer>
-              <PublisherLabel>{game.publisher}</PublisherLabel>
-              <Pill>{game.genre}</Pill>
-            </SubtitleContainer>
-
-            <SizedBox height={Theme.Size.XSmall} />
-
-            <ShortDescriptionLabel>
-              {game?.shortDescription}
-            </ShortDescriptionLabel>
-
-            <SizedBox height={Theme.Size.Default} />
-
-            <ButtonContainer>
-              <ButtonLink
-                title="PLAY GAME"
-                to={game?.freetogameProfileUrl}
-                target="_blank"
-                native
-              />
-            </ButtonContainer>
-          </SummaryContainer>
-
-          <FeaturedImageContainer>
-            <FeaturedImage src={game?.thumbnail} />
-          </FeaturedImageContainer>
-        </SummaryBoxContainer>
+        <GameSummary game={game} isLoading={isGameLoading} />
 
         <DetailsContainer>
           <DescriptionBoxContainer>
