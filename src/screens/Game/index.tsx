@@ -7,14 +7,17 @@ import { Response as GameResponse } from '../../domains/Game/api/getGame/types';
 import { useGame } from '../../domains/Game/hooks';
 import { useSearchInput } from '../../components/SearchInput/hooks';
 
-import { GameSummary, InfoTable, RequirementsTable } from './components';
 import { Carousel, Header } from '../../components';
+import {
+  GameSummary,
+  Description,
+  InfoTable,
+  RequirementsTable,
+} from './components';
 import {
   Container,
   BackgroundImage,
   DetailsContainer,
-  DescriptionBoxContainer,
-  DescriptionLabel,
   CarouselContainer,
   InfoBoxContainer,
 } from './styles';
@@ -64,9 +67,7 @@ const Home: React.FC = () => {
         <GameSummary game={game} isLoading={isGameLoading} />
 
         <DetailsContainer>
-          <DescriptionBoxContainer>
-            <DescriptionLabel>{game?.description}</DescriptionLabel>
-          </DescriptionBoxContainer>
+          <Description game={game} isLoading={isGameLoading} />
 
           <CarouselContainer>
             <Carousel images={carouselImages} isLoading={isGameLoading} />

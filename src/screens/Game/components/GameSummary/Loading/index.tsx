@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Theme from '../../../../../shared/styles/Theme';
-import { Pill, SizedBox } from '../../../../../components';
+import { SizedBox } from '../../../../../components';
 import {
   SummaryBoxContainer,
   FeaturedImageContainer,

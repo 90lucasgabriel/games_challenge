@@ -10,14 +10,10 @@ import {
 import {
   SummaryBoxContainer as SummaryBoxContainerDefault,
   FeaturedImageContainer as FeaturedImageContainerDefault,
-  FeaturedImage as FeaturedImageDefault,
   SummaryContainer as SummaryContainerDefault,
   NameContainer as NameContainerDefault,
-  NameLabel as NameLabelDefault,
-  PublisherLabel as PublisherLabelDefault,
   ButtonContainer as ButtonContainerDefault,
   SubtitleContainer as SubtitleContainerDefault,
-  ShortDescriptionLabel as ShortDescriptionLabelDefault,
 } from '../styles';
 
 export const SummaryBoxContainer = styled(SummaryBoxContainerDefault)``;

@@ -28,15 +28,6 @@ export const DetailsContainer = styled.div`
   background: ${Theme.Color.BlackAplhaSelected};
 `;
 
-export const DescriptionBoxContainer = styled(BoxContainer)`
-  display: flex;
-  flex: 1;
-  padding: ${Theme.Size.XLarge} ${Theme.Size.Default} ${Theme.Size.Large}
-    ${Theme.Size.Default};
-`;
-
-export const DescriptionLabel = styled.p``;
-
 export const CarouselContainer = styled.div`
   display: flex;
 `;
