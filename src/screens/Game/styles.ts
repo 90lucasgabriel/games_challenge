@@ -143,19 +143,6 @@ export const InfoBoxContainer = styled(BoxContainer)`
   }
 `;
 
-export const InfoContainer = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: ${Theme.Size.Default};
-`;
-
-export const InfoLabel = styled.p`
-  display: flex;
-  flex: 1;
-`;
-
 export const RequirementsContainer = styled.div`
   display: flex;
   flex: 1;
@@ -171,36 +158,4 @@ export const RequirementsContainer = styled.div`
 export const RequirementsTitle = styled.h4`
   display: flex;
   flex: 1;
-`;
-
-export const InlineItemContainer = styled.div`
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  align-items: center;
-`;
-
-export const InlineItemTitle = styled.h5`
-  display: flex;
-`;
-
-export const InlineItemLabel = styled.p`
-  display: flex;
-  flex: 1;
-  align-items: flex-end;
-  justify-content: flex-end;
-`;
-
-export const ItemContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: ${Theme.Size.Medium};
-`;
-
-export const ItemTitle = styled.h5`
-  display: flex;
-`;
-
-export const ItemLabel = styled.p`
-  display: flex;
 `;

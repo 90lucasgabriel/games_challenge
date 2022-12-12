@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import Theme from '../../shared/styles/Theme';
+
+import { Skeleton } from '../../Skeleton';
 
 export const Container = styled.div`
   display: flex;
@@ -8,13 +9,9 @@ export const Container = styled.div`
   justify-content: center;
   height: 600px;
   overflow: hidden;
-  background: ${Theme.Color.WhiteAplha};
 `;
 
-export const FeaturedImage = styled.img`
+export const BackdropSkeleton = styled(Skeleton)`
   width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-
-  transition: all 0.5s ease;
+  height: 100%;
 `;

@@ -22,7 +22,7 @@ export const InlineItemLabel = styled.p`
   justify-content: flex-end;
 
   ${props =>
-    props.onClick &&
+    props?.onClick &&
     css`
       text-decoration: underline;
       cursor: pointer;
@@ -42,7 +42,7 @@ export const ItemTitle = styled.h5`
 export const ItemLabel = styled.p`
   display: flex;
   ${props =>
-    props.onClick &&
+    props?.onClick &&
     css`
       text-decoration: underline;
       cursor: pointer;

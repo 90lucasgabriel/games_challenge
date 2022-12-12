@@ -3,6 +3,7 @@ type TileProps = {
   description?: string;
   inline?: boolean;
   onClick?(): void;
+  isLoading?: boolean;
 };
 
 export default TileProps;

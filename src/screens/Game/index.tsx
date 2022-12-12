@@ -1,12 +1,14 @@
 import React, { useEffect, useCallback, useState, useMemo } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 
+import { Game } from '../../domains/Game/types';
 import GameParams from './type';
 import { Response as GameResponse } from '../../domains/Game/api/getGame/types';
 import { useGame } from '../../domains/Game/hooks';
 import { useSearchInput } from '../../components/SearchInput/hooks';
 
 import Theme from '../../shared/styles/Theme';
+import { InfoTable } from './components';
 import {
   ButtonLink,
   Carousel,
@@ -31,7 +33,6 @@ import {
   DescriptionLabel,
   CarouselContainer,
   InfoBoxContainer,
-  InfoContainer,
   SubtitleContainer,
   RequirementsContainer,
   RequirementsTitle,
@@ -42,7 +43,7 @@ const Home: React.FC = () => {
   const { id } = useParams<GameParams>();
   const history = useHistory();
 
-  const { getGame } = useGame();
+  const { getGame, isGameLoading } = useGame();
   const { setKeyword } = useSearchInput();
 
   const [game, setGame] = useState({} as GameResponse);
@@ -65,7 +66,7 @@ const Home: React.FC = () => {
 
   const getGameDetails = useCallback(async () => {
     const response = await getGame({ id: Number(id) });
-    setGame(response);
+    setGame(response ?? ({} as Game));
   }, [getGame, id]);
 
   useEffect(() => {
@@ -121,41 +122,15 @@ const Home: React.FC = () => {
           </DescriptionBoxContainer>
 
           <CarouselContainer>
-            <Carousel images={carouselImages} />
+            <Carousel images={carouselImages} isLoading={isGameLoading} />
           </CarouselContainer>
 
           <InfoBoxContainer>
-            <InfoContainer>
-              <Tile
-                title="Developer"
-                description={game?.developer}
-                onClick={() => searchKeyword(game?.developer)}
-                inline
-              />
-              <Tile
-                title="Publisher"
-                description={game?.publisher}
-                onClick={() => searchKeyword(game?.publisher)}
-                inline
-              />
-              <Tile
-                title="Release Date"
-                description={game?.releaseDate}
-                inline
-              />
-              <Tile
-                title="Genre"
-                description={game?.genre}
-                onClick={() => searchKeyword(game?.genre)}
-                inline
-              />
-              <Tile
-                title="Platform"
-                description={game?.platform}
-                onClick={() => searchKeyword(game?.platform)}
-                inline
-              />
-            </InfoContainer>
+            <InfoTable
+              game={game}
+              onClick={searchKeyword}
+              isLoading={isGameLoading}
+            />
             <RequirementsContainer>
               <RequirementsTitle>Minimum System Requirements</RequirementsTitle>
               <Tile

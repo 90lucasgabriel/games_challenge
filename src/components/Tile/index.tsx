@@ -1,5 +1,6 @@
 import React from 'react';
 
+import TileLoading from './Loading';
 import TileProps from './types';
 import {
   InlineItemContainer,
@@ -15,7 +16,12 @@ const Tile = ({
   description,
   inline,
   onClick,
+  isLoading,
 }: TileProps): JSX.Element => {
+  if (isLoading) {
+    return <TileLoading inline={inline} />;
+  }
+
   if (inline) {
     return (
       <InlineItemContainer>

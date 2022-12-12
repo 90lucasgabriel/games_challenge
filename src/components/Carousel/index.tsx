@@ -1,9 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 
 import CarouselProps from './types';
+import { CarouselLoading } from '..';
 import { Container, FeaturedImage } from './styles';
 
-const Carousel = ({ images }: CarouselProps): JSX.Element => {
+const Carousel = ({ images, isLoading }: CarouselProps): JSX.Element => {
   const [index, setIndex] = useState(0);
 
   const autoUpdate = useCallback(() => {
@@ -13,8 +14,12 @@ const Carousel = ({ images }: CarouselProps): JSX.Element => {
   }, [index, images.length]);
 
   useEffect(() => {
-    autoUpdate();
+    // autoUpdate();
   }, [autoUpdate]);
+
+  if (isLoading) {
+    return <CarouselLoading />;
+  }
 
   return (
     <Container>
