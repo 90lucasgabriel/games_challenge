@@ -3,6 +3,7 @@ import React from 'react';
 import GameSummaryProps from './types';
 
 import Theme from '../../../../shared/styles/Theme';
+import GameSummaryLoading from './Loading';
 import { Pill, SizedBox, ButtonLink } from '../../../../components';
 import {
   SummaryBoxContainer,
@@ -18,6 +19,10 @@ import {
 } from './styles';
 
 const GameSummary = ({ game, isLoading }: GameSummaryProps): JSX.Element => {
+  if (isLoading) {
+    return <GameSummaryLoading />;
+  }
+
   return (
     <SummaryBoxContainer>
       <SummaryContainer>

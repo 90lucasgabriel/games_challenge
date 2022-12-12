@@ -27,7 +27,7 @@ export const Skeleton = styled.div`
 export const SkeletonLabel = styled(Skeleton)`
   display: flex;
   height: 16px;
-  border-radius: ${Theme.Size.Default};
+  border-radius: ${Theme.Size.XLarge};
 `;
 
 export const SkeletonLabel25 = styled(SkeletonLabel)`
