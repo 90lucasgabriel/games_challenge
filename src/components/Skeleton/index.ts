@@ -4,9 +4,9 @@ import Theme from '../../shared/styles/Theme';
 export const Skeleton = styled.div`
   background-image: linear-gradient(
     -90deg,
-    #e3e3e3 0%,
-    #f9f9f9 50%,
-    #e3e3e3 100%
+    rgba(227, 227, 227, 0.5) 0%,
+    rgba(249, 249, 249, 0.7) 50%,
+    rgba(227, 227, 227, 0.5) 100%
   );
 
   background-size: 400% 400%;
