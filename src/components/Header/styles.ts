@@ -12,6 +12,7 @@ export const Container = styled.div`
 
 export const LeftContainer = styled.div`
   display: flex;
+  flex: 1;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
@@ -30,20 +31,20 @@ export const LogoContainer = styled(Link)`
 `;
 
 export const MenuContainer = styled.div`
-  display: none;
+  display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
+`;
+
+export const MenuItem = styled(Link)`
+  display: none;
+  margin-left: ${Theme.Size.XLarge};
   justify-content: center;
 
   @media only screen and (min-width: ${Theme.ScreenSize.sm}) {
     display: flex;
   }
-`;
-
-export const MenuItem = styled(Link)`
-  display: flex;
-  margin-left: ${Theme.Size.XLarge};
-  justify-content: center;
 `;
 
 export const MenuIcon = styled.div`
