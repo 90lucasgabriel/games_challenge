@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Theme from '../../shared/styles/Theme';
 
 export const InlineItemContainer = styled.div`
@@ -20,6 +20,13 @@ export const InlineItemLabel = styled.p`
   flex: 1;
   align-items: flex-end;
   justify-content: flex-end;
+
+  ${props =>
+    props.onClick &&
+    css`
+      text-decoration: underline;
+      cursor: pointer;
+    `}
 `;
 
 export const ItemContainer = styled.div`
@@ -34,4 +41,10 @@ export const ItemTitle = styled.h5`
 
 export const ItemLabel = styled.p`
   display: flex;
+  ${props =>
+    props.onClick &&
+    css`
+      text-decoration: underline;
+      cursor: pointer;
+    `}
 `;

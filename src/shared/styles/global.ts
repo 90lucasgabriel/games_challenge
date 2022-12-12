@@ -41,6 +41,7 @@ export default createGlobalStyle`
   p {
     font-size: 1.6rem;
     line-height: 32px;
+    text-underline-offset: 5px;
   }
 
   button {

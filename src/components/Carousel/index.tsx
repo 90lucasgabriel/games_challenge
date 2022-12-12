@@ -9,7 +9,7 @@ const Carousel = ({ images }: CarouselProps): JSX.Element => {
   const autoUpdate = useCallback(() => {
     setInterval(() => {
       index === images.length - 1 ? setIndex(0) : setIndex(index + 1);
-    }, 4000);
+    }, 3000);
   }, [index, images.length]);
 
   useEffect(() => {
