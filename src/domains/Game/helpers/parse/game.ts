@@ -1,8 +1,8 @@
 import { formatDate } from '../../../../shared/helpers';
 import { Game, GameRaw } from '../../types';
-import { parseScreenshots, parseMinimumSystemRequirements } from './';
+import { parseScreenshots, parseMinimumSystemRequirements } from '.';
 
-const parseGame = (valueRaw: GameRaw) => {
+const parseGame = (valueRaw: GameRaw): Game => {
   const parsedScreenshots = parseScreenshots(valueRaw.screenshots);
   const parsedMinimumSystemRequirements = parseMinimumSystemRequirements(
     valueRaw.minimum_system_requirements,

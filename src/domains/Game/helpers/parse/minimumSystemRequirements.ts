@@ -5,7 +5,7 @@ import {
 
 const parseMinimumSystemRequirements = (
   valueRaw: MinimumSystemRequirementsRaw,
-) => {
+): MinimumSystemRequirements => {
   const response = {
     graphics: valueRaw.graphics,
     memory: valueRaw.memory,

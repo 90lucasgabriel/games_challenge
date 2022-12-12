@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from 'react';
+
 import {
   Params as GameParams,
   Response as GameResponse,
@@ -5,6 +7,8 @@ import {
 import { Response as GameListResponse } from '../api/getList/types';
 
 export default interface ContextData {
+  gameList: GameListResponse;
+  setGameList: Dispatch<SetStateAction<GameListResponse>>;
   getGame(params: GameParams): Promise<GameResponse>;
   getGameList(): Promise<GameListResponse>;
 }

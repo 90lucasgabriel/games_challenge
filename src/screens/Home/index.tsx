@@ -1,31 +1,47 @@
-import React, { useEffect, useCallback, useState } from 'react';
+import React, { useEffect, useCallback, useMemo } from 'react';
 
-import { Response as GameListResponse } from '../../domains/Game/api/getList/types';
 import { useGame } from '../../domains/Game/hooks';
+import { useSearchInput } from '../../components/SearchInput/hooks';
 
-import { GameList } from '../../components';
-import { Container, GameListContainer } from './styles';
+import { BoxContainer, Header, GameList } from '../../components';
+import { Container } from './styles';
 
-const Home: React.FC = () => {
-  const { getGameList } = useGame();
-
-  const [gameList, setGameList] = useState([] as GameListResponse);
+const Home = (): JSX.Element => {
+  const { getGameList, gameList } = useGame();
+  const { keyword } = useSearchInput();
 
   const getGames = useCallback(async () => {
-    const response = await getGameList();
-    setGameList(response);
+    await getGameList();
   }, [getGameList]);
+
+  const gameListFiltered = useMemo(() => {
+    if (!keyword || keyword?.length === 0) {
+      return gameList;
+    }
+
+    return gameList.filter(
+      item =>
+        item?.title?.toUpperCase()?.includes(keyword?.toUpperCase()) ||
+        item?.shortDescription
+          ?.toUpperCase()
+          ?.includes(keyword?.toUpperCase()) ||
+        item?.publisher?.toUpperCase()?.includes(keyword?.toUpperCase()),
+    );
+  }, [keyword, gameList]);
 
   useEffect(() => {
     getGames();
   }, []); // eslint-disable-line
 
   return (
-    <Container>
-      <GameListContainer>
-        <GameList data={gameList} />
-      </GameListContainer>
-    </Container>
+    <>
+      <Header />
+      <Container>
+        <BoxContainer>
+          <GameList data={gameListFiltered} />
+        </BoxContainer>
+      </Container>
+    </>
   );
 };
 

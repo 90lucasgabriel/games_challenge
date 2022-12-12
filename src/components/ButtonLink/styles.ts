@@ -28,4 +28,4 @@ export const Container = styled.div`
   }
 `;
 
-export const Title = styled.p`ß`;
+export const Title = styled.p``;
