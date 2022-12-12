@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { FaSearch, FaTimes } from 'react-icons/fa';
 
 import { useSearchInput } from './hooks';
@@ -7,9 +7,12 @@ import { Container, Input, ClearButton, IconButton } from './styles';
 const SearchInput = (): JSX.Element => {
   const { keyword, setKeyword } = useSearchInput();
 
-  const onChangeKeyword = (value: any): void => {
-    setKeyword(value.target.value);
-  };
+  const onChangeKeyword = useCallback(
+    (value: any): void => {
+      setKeyword(value.target.value);
+    },
+    [setKeyword],
+  );
 
   return (
     <Container>
