@@ -1,6 +1,6 @@
 import React from 'react';
 import Lottie from 'react-lottie';
-import NoResultFound from '../../assets/lottie/no-result-found5.json';
+import NoResultFound from '../../assets/lottie/no-result-found.json';
 
 import GameListProps from './types';
 
