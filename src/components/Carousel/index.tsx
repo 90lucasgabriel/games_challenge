@@ -14,7 +14,7 @@ const Carousel = ({ images, isLoading }: CarouselProps): JSX.Element => {
   }, [index, images.length]);
 
   useEffect(() => {
-    // autoUpdate();
+    autoUpdate();
   }, [autoUpdate]);
 
   if (isLoading) {
