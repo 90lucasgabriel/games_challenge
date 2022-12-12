@@ -72,6 +72,7 @@ export const FeaturedImage = styled.img`
   border-radius: ${Theme.Size.Default};
   box-shadow: 0px 5px 10px 0px ${Theme.Color.BlackAplhaSelected};
   object-fit: cover;
+  background: ${Theme.Color.WhiteAplha};
 `;
 
 export const GameListContainer = styled.div`
@@ -141,21 +142,4 @@ export const InfoBoxContainer = styled(BoxContainer)`
   @media only screen and (min-width: ${Theme.ScreenSize.sm}) {
     flex-direction: row;
   }
-`;
-
-export const RequirementsContainer = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  padding: ${Theme.Size.Default};
-  margin: ${Theme.Size.Default};
-  border-radius: ${Theme.Size.Default};
-  border: 1px solid ${Theme.Color.WhiteAplha};
-  background: ${Theme.Color.WhiteAplha};
-  box-shadow: 0px 5px 10px 0px ${Theme.Color.BlackAplhaSelected};
-`;
-
-export const RequirementsTitle = styled.h4`
-  display: flex;
-  flex: 1;
 `;

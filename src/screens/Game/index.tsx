@@ -8,7 +8,7 @@ import { useGame } from '../../domains/Game/hooks';
 import { useSearchInput } from '../../components/SearchInput/hooks';
 
 import Theme from '../../shared/styles/Theme';
-import { InfoTable } from './components';
+import { InfoTable, RequirementsTable } from './components';
 import {
   ButtonLink,
   Carousel,
@@ -34,8 +34,6 @@ import {
   CarouselContainer,
   InfoBoxContainer,
   SubtitleContainer,
-  RequirementsContainer,
-  RequirementsTitle,
   ShortDescriptionLabel,
 } from './styles';
 
@@ -131,29 +129,7 @@ const Home: React.FC = () => {
               onClick={searchKeyword}
               isLoading={isGameLoading}
             />
-            <RequirementsContainer>
-              <RequirementsTitle>Minimum System Requirements</RequirementsTitle>
-              <Tile
-                title="Graphics"
-                description={game?.minimumSystemRequirements?.graphics}
-              />
-              <Tile
-                title="Memory"
-                description={game?.minimumSystemRequirements?.memory}
-              />
-              <Tile
-                title="OS"
-                description={game?.minimumSystemRequirements?.os}
-              />
-              <Tile
-                title="Processor"
-                description={game?.minimumSystemRequirements?.processor}
-              />
-              <Tile
-                title="Storage"
-                description={game?.minimumSystemRequirements?.storage}
-              />
-            </RequirementsContainer>
+            <RequirementsTable game={game} isLoading={isGameLoading} />
           </InfoBoxContainer>
         </DetailsContainer>
       </Container>
