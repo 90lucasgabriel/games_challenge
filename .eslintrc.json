@@ -43,6 +43,7 @@
     "react/function-component-definition": "off",
     "react/jsx-no-constructed-context-values": "off",
     "consistent-return": "off",
+    "react/no-array-index-key": "off",
     "no-shadow": "warn",
     "import/extensions": [
       "error",

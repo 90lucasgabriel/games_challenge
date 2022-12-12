@@ -5,6 +5,7 @@ import NoResultFound from '../../assets/lottie/no-result-found.json';
 import GameListProps from './types';
 
 import { GameItem } from '..';
+import GameListLoading from './Loading';
 import {
   NoResultContainer,
   Label,
@@ -12,9 +13,9 @@ import {
   GameItemContainer,
 } from './styles';
 
-const GameList = ({ data }: GameListProps): JSX.Element | null => {
-  if (!data) {
-    return null;
+const GameList = ({ data, isLoading }: GameListProps): JSX.Element | null => {
+  if (isLoading) {
+    return <GameListLoading />;
   }
 
   const defaultOptions = {

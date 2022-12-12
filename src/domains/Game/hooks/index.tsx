@@ -37,6 +37,7 @@ const GameProvider = ({ children }: any): JSX.Element => {
     GameListResponse | undefined
   > => {
     try {
+      setIsLoading(true);
       const responseRaw = await getGameListApi();
       const response = parseGameList(responseRaw);
 
