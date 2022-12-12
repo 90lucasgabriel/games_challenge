@@ -8,7 +8,7 @@ import { BoxContainer, Header, GameList } from '../../components';
 import { Container } from './styles';
 
 const Home = (): JSX.Element => {
-  const { getGameList, gameList } = useGame();
+  const { getGameList, gameList, isGameLoading } = useGame();
   const { keyword, sortAsc } = useSearchInput();
 
   const getGames = useCallback(async () => {
@@ -64,7 +64,7 @@ const Home = (): JSX.Element => {
       <Header />
       <Container>
         <BoxContainer>
-          <GameList data={gameListFiltered} />
+          <GameList data={gameListFiltered} isLoading={isGameLoading} />
         </BoxContainer>
       </Container>
     </>

@@ -10,35 +10,51 @@ import {
   Response as GameResponse,
 } from '../api/getGame/types';
 
-import { useSearchInput } from '../../../components/SearchInput/hooks';
-
 const GameContext = createContext<ContextData>({} as ContextData);
 
 const GameProvider = ({ children }: any): JSX.Element => {
   const [gameList, setGameList] = useState([] as GameListResponse);
+  const [isLoading, setIsLoading] = useState(false);
 
   const getGame = useCallback(
-    async (params: GameParams): Promise<GameResponse> => {
-      const responseRaw = await getGameApi(params);
-      const response = parseGame(responseRaw);
+    async (params: GameParams): Promise<GameResponse | undefined> => {
+      try {
+        setIsLoading(true);
+        const responseRaw = await getGameApi(params);
+        const response = parseGame(responseRaw);
 
-      return response;
+        return response;
+      } catch (error) {
+        console.error(error); // eslint-disable-line
+      } finally {
+        setIsLoading(false);
+      }
     },
     [],
   );
 
-  const getGameList = useCallback(async (): Promise<GameListResponse> => {
-    const responseRaw = await getGameListApi();
-    const response = parseGameList(responseRaw);
+  const getGameList = useCallback(async (): Promise<
+    GameListResponse | undefined
+  > => {
+    try {
+      setIsLoading(true);
+      const responseRaw = await getGameListApi();
+      const response = parseGameList(responseRaw);
 
-    setGameList(response);
+      setGameList(response);
 
-    return response;
+      return response;
+    } catch (error) {
+      console.error(error); // eslint-disable-line
+    } finally {
+      setIsLoading(false);
+    }
   }, []);
 
   return (
     <GameContext.Provider
       value={{
+        isGameLoading: isLoading,
         getGame,
         getGameList,
         gameList,

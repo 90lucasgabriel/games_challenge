@@ -1,10 +1,14 @@
 import { formatDate } from '../../../../shared/helpers';
 import { GameItem, GameItemRaw } from '../../types';
 
-const parseGameList = (valueRaw: GameItemRaw[]): GameItem[] => {
+const parseGameList = (valueRaw?: GameItemRaw[]): GameItem[] => {
+  if (!valueRaw) {
+    return [] as GameItem[];
+  }
+
   let response = [] as GameItem[];
 
-  valueRaw.forEach(game => {
+  valueRaw?.forEach(game => {
     const parsedGame = {
       id: game?.id,
       title: game?.title,
