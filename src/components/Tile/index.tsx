@@ -10,12 +10,17 @@ import {
   ItemLabel,
 } from './styles';
 
-const Tile = ({ title, description, inline }: TileProps): JSX.Element => {
+const Tile = ({
+  title,
+  description,
+  inline,
+  onClick,
+}: TileProps): JSX.Element => {
   if (inline) {
     return (
       <InlineItemContainer>
         <InlineItemTitle>{title}</InlineItemTitle>
-        <InlineItemLabel>{description}</InlineItemLabel>
+        <InlineItemLabel onClick={onClick}>{description}</InlineItemLabel>
       </InlineItemContainer>
     );
   }
@@ -23,7 +28,7 @@ const Tile = ({ title, description, inline }: TileProps): JSX.Element => {
   return (
     <ItemContainer>
       <ItemTitle>{title}</ItemTitle>
-      <ItemLabel>{description}</ItemLabel>
+      <ItemLabel onClick={onClick}>{description}</ItemLabel>
     </ItemContainer>
   );
 };

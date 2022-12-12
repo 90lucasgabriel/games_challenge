@@ -10,8 +10,11 @@ export const Container = styled.div`
   background: ${Theme.Color.FillAlpha};
   display: flex;
   align-items: center;
-
   transition: all 0.5s ease;
+
+  @media only screen and (max-width: ${Theme.ScreenSize.sm}) {
+    flex: 1;
+  }
 `;
 
 export const Input = styled.input`
@@ -20,6 +23,10 @@ export const Input = styled.input`
   border: 0;
   color: ${Theme.Color.Text};
   font-size: 16px;
+
+  @media only screen and (max-width: ${Theme.ScreenSize.sm}) {
+    flex: 1;
+  }
 `;
 
 export const ClearButton = styled.button<ClearButtonProps>`

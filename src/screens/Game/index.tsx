@@ -1,9 +1,10 @@
 import React, { useEffect, useCallback, useState, useMemo } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 import GameParams from './type';
 import { Response as GameResponse } from '../../domains/Game/api/getGame/types';
 import { useGame } from '../../domains/Game/hooks';
+import { useSearchInput } from '../../components/SearchInput/hooks';
 
 import Theme from '../../shared/styles/Theme';
 import {
@@ -31,14 +32,18 @@ import {
   CarouselContainer,
   InfoBoxContainer,
   InfoContainer,
-  PillContainer,
+  SubtitleContainer,
   RequirementsContainer,
   RequirementsTitle,
+  ShortDescriptionLabel,
 } from './styles';
 
 const Home: React.FC = () => {
   const { id } = useParams<GameParams>();
+  const history = useHistory();
+
   const { getGame } = useGame();
+  const { setKeyword } = useSearchInput();
 
   const [game, setGame] = useState({} as GameResponse);
 
@@ -48,6 +53,14 @@ const Home: React.FC = () => {
         ? game?.screenshots?.map(screenshot => screenshot.image)
         : [],
     [game],
+  );
+
+  const searchKeyword = useCallback(
+    async (value: string) => {
+      await setKeyword(value);
+      history.push('/');
+    },
+    [history, setKeyword],
   );
 
   const getGameDetails = useCallback(async () => {
@@ -74,13 +87,18 @@ const Home: React.FC = () => {
             </NameContainer>
 
             <SizedBox height={Theme.Size.XSmall} />
-            <PublisherLabel>{game.publisher}</PublisherLabel>
+            <SubtitleContainer>
+              <PublisherLabel>{game.publisher}</PublisherLabel>
+              <Pill>{game.genre}</Pill>
+            </SubtitleContainer>
+
             <SizedBox height={Theme.Size.XSmall} />
 
-            <PillContainer>
-              <Pill>{game.genre}</Pill>
-            </PillContainer>
-            <SizedBox height={Theme.Size.Large} />
+            <ShortDescriptionLabel>
+              {game?.shortDescription}
+            </ShortDescriptionLabel>
+
+            <SizedBox height={Theme.Size.Default} />
 
             <ButtonContainer>
               <ButtonLink
@@ -108,15 +126,35 @@ const Home: React.FC = () => {
 
           <InfoBoxContainer>
             <InfoContainer>
-              <Tile title="Developer" description={game?.developer} inline />
-              <Tile title="Publisher" description={game?.publisher} inline />
+              <Tile
+                title="Developer"
+                description={game?.developer}
+                onClick={() => searchKeyword(game?.developer)}
+                inline
+              />
+              <Tile
+                title="Publisher"
+                description={game?.publisher}
+                onClick={() => searchKeyword(game?.publisher)}
+                inline
+              />
               <Tile
                 title="Release Date"
                 description={game?.releaseDate}
                 inline
               />
-              <Tile title="Genre" description={game?.genre} inline />
-              <Tile title="Platform" description={game?.platform} inline />
+              <Tile
+                title="Genre"
+                description={game?.genre}
+                onClick={() => searchKeyword(game?.genre)}
+                inline
+              />
+              <Tile
+                title="Platform"
+                description={game?.platform}
+                onClick={() => searchKeyword(game?.platform)}
+                inline
+              />
             </InfoContainer>
             <RequirementsContainer>
               <RequirementsTitle>Minimum System Requirements</RequirementsTitle>

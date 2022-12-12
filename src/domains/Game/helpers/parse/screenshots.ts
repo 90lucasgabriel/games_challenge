@@ -5,8 +5,8 @@ const parseScreenshots = (valueRaw: ScreenshotRaw[]): Screenshot[] => {
 
   valueRaw.forEach(item => {
     const parsedValue = {
-      id: item.id,
-      image: item.image,
+      id: item?.id,
+      image: item?.image,
     } as Screenshot;
 
     response = [...response, parsedValue];

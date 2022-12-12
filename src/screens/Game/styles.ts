@@ -40,7 +40,11 @@ export const SummaryContainer = styled.div`
   min-height: 24rem;
 `;
 
-export const PillContainer = styled.div``;
+export const PillContainer = styled.div`
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+`;
 
 export const ButtonContainer = styled.div`
   display: flex;
@@ -79,6 +83,13 @@ export const NameContainer = styled.div``;
 
 export const NameLabel = styled.h1``;
 
+export const SubtitleContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+
 export const PublisherLabel = styled.p`
   font-size: ${Theme.Size.Default};
 `;
@@ -89,7 +100,15 @@ export const GenreContainer = styled.div`
   justify-content: flex-end;
 `;
 
-export const ShortDescriptionLabel = styled.p``;
+export const ShortDescriptionLabel = styled.p`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 2.4rem;
+  max-height: 9.6rem;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+`;
 
 export const DetailsContainer = styled.div`
   display: flex;

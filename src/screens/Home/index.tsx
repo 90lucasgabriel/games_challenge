@@ -28,7 +28,10 @@ const Home = (): JSX.Element => {
         item?.shortDescription
           ?.toUpperCase()
           ?.includes(keyword?.toUpperCase()) ||
-        item?.publisher?.toUpperCase()?.includes(keyword?.toUpperCase()),
+        item?.publisher?.toUpperCase()?.includes(keyword?.toUpperCase()) ||
+        item?.developer?.toUpperCase()?.includes(keyword?.toUpperCase()) ||
+        item?.genre?.toUpperCase()?.includes(keyword?.toUpperCase()) ||
+        item?.platform?.toUpperCase()?.includes(keyword?.toUpperCase()),
     );
 
     // Sort game list
